@@ -1,0 +1,32 @@
+
+<h1>Listing Posts</h1>
+
+  <% @posts.each do |post| %>
+    <div class="row">
+      <div class="col-sm-9">
+        <h2><%= link_to post.header, post %></h2>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-8">
+        <%= post.post.lines.first %>
+      </div>
+
+      <div class="col-xs-6 col-md-4">
+        <%= datetime_format(post.created_at) %>
+        <% if not current_user.nil? %>
+            <ul>
+              <li><%= link_to 'Show', post %></li>
+              <li><%= link_to 'Edit', edit_post_path(post) %></li>
+              <li><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+            </ul>
+
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+
+<br>
+
+<% if not current_user.nil? %>
+  <%= link_to 'New Post', new_post_path %>
+<% end %>

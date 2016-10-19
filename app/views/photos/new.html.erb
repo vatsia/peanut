@@ -1,0 +1,15 @@
+<h1>List of photos</h1>
+<ul class="row" id="photos-list">
+  <%= render @photos %>
+</ul>
+
+<%= form_for @photo, remote: true do |f| %>
+
+
+    <div class="form-group">
+      <%= f.label :image %>
+      <%= f.file_field :image, required: true %>
+    </div>
+
+    <%= f.submit 'Submit', class: 'btn btn-primary btn-lg' %>
+<% end %>

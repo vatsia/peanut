@@ -1,0 +1,40 @@
+<%= form_for(@post) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :header %><br>
+    <%= f.text_field :header %>
+  </div>
+  <div class="field">
+    <%= f.label :post %><br>
+    <%= f.text_area :post %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<h1>Images</h1>
+<ul class="row" id="photos-list">
+  <%= render @photos %>
+</ul>
+
+<%= form_for @photo, remote: true do |f| %>
+  <div class="form-group">
+    <%= f.label :image %>
+    <%= f.file_field :image, required: true %>
+    <%= f.hidden_field :post_id, :value => @post.id %>
+  </div>
+
+  <%= f.submit 'Submit', class: 'btn btn-primary btn-lg' %>
+<% end %>
