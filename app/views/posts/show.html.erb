@@ -3,7 +3,7 @@
 <h1><%= @post.header %></h1>
 <ins>Kirjoitettu <%= datetime_format@post.created_at %></ins>
 <p>
-  <%= simple_format(@post.post) %>
+  <%= @post.post.html_safe %>
 </p>
 
 <% if not current_user.nil? %>

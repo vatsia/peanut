@@ -27,6 +27,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #gem 'bcrypt', '~> 3.1.7'
 gem 'bcrypt'
 
+# bbcodes
+gem 'bb-ruby'
+#gem 'ruby-bbcode'
+
 # image uploading stuff
 gem 'dragonfly'
 gem 'jquery-fileupload-rails', github: 'Springest/jquery-fileupload-rails'

@@ -7,7 +7,7 @@
         <h2><%= link_to post.header, post %></h2>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-8">
-        <%= post.post.lines.first %>
+        <%= post.post.lines.first.html_safe %>
       </div>
 
       <div class="col-xs-6 col-md-4">

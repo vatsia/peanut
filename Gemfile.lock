@@ -48,6 +48,7 @@ GEM
     arel (6.0.3)
     autoprefixer-rails (6.4.1.1)
       execjs
+    bb-ruby (1.2.2)
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
@@ -166,6 +167,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bb-ruby
   bcrypt
   bootstrap-sass
   byebug

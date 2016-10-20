@@ -1,15 +1,21 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_own_bbcodes, only: [:index, :show]
+  require 'bb-ruby'
 
   # GET /posts
   # GET /posts.json
   def index
     @posts = Post.all
+    @posts.each do |post|
+      post.post = post.post.bbcode_to_html(@imagetag)
+    end
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @post.post = @post.post.bbcode_to_html_with_formatting(@imagetag)
   end
 
   # GET /posts/new
@@ -97,6 +103,19 @@ class PostsController < ApplicationController
   end
 
   private
+    def set_own_bbcodes
+      @imagetag = {
+        'Image' => [
+          /\[img(:.+)?\]([^\[\]].*?)\[\/img\1?\]/im,
+          '<img src="\2" alt="" class="img-thumbnail" />',
+          'Quote with citation',
+          '[quote=mike]please quote me[/quote]',
+          :image
+          ]
+      }
+
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
