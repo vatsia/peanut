@@ -1,7 +1,14 @@
+
+<div class="row">
+  <div class="span9 text-center header-bar">
+    <h1><%= @post.header %></h1>
+    <i><%= datetime_format@post.created_at %></i>
+  </div>
+
+</div>
+
 <p id="notice"><%= notice %></p>
 
-<h1><%= @post.header %></h1>
-<ins>Kirjoitettu <%= datetime_format@post.created_at %></ins>
 <p>
   <%= @post.post.html_safe %>
 </p>
