@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.order('created_at DESC')
     @posts.each do |post|
       post.post = post.post.bbcode_to_html(@imagetag)
     end

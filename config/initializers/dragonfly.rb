@@ -13,7 +13,7 @@ Dragonfly.app.configure do
   #  server_root: Rails.root.join('public')
 
   datastore :file,
-      root_path: Rails.root.join('public/system/dragonfly', Rails.env),
+      root_path: Rails.root.join('public/images', Rails.env),
       server_root: Rails.root.join('public')
 end
 

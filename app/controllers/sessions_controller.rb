@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       redirect_to :root, notice: "Logged in as #{params[:username]}"
 
     else
-      redirect_to :back, notice: "Invalid username"
+      redirect_to :back, alert: "Invalid username or password!"
     end
   end
 

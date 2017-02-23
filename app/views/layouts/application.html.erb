@@ -13,8 +13,21 @@
       <%= render 'layouts/navigation' %>
     </header>
     <main role="main">
-       <%= render 'layouts/messages' %>
-       <%= yield %>
+      <div class="container header-box">
+        <h1 class="top-header">PeanutNetworks</h1>
+        <p class="description lead">Tähän ehk jotain joskus :D</p>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8">
+            <%= render 'layouts/messages' %>
+            <%= yield %>
+          </div>
+        </div>
+      </div>
     </main>
+  <footer class="footer">
+    &copy; PeanutNetworks 2017
+  </footer>
   </body>
 </html>
