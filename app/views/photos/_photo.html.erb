@@ -1,4 +1,4 @@
 <li class="col-xs-3">
   <%= link_to image_tag(photo.image.thumb('180x180#').url, class: 'img-thumbnail'), photo.image.remote_url, target: '_blank' %>
   <p><%= text_field_tag 'image-bbcode', "[url=#{photo.image.remote_url}][img]#{photo.image.thumb('300x300#').url}[/img][/url]" %></p>
-</li>
+</li> 
