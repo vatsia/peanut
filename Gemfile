@@ -14,7 +14,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-#gem 'json', github: 'flori/json', branch: 'v1.8'
+gem 'json', github: 'flori/json', branch: 'v1.8'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -31,6 +31,9 @@ gem 'bcrypt'
 # bbcodes
 gem 'bb-ruby'
 #gem 'ruby-bbcode'
+
+# JSON
+gem 'httparty'
 
 # image uploading stuff
 gem 'dragonfly'

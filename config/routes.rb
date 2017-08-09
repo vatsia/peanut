@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :contacts, only: [:new, :create, :destroy, :index, :show]
   match "/404", :to => "errors#not_found", :via => :all
   match "/500", :to => "errors#internal_server_error", :via => :all
 
@@ -46,6 +47,7 @@ Rails.application.routes.draw do
   resource :session, only: [:new, :create, :delete]
 
   get 'signin', to: 'sessions#new'
+  get 'contact', to: 'contacts#new', as: 'contactp'
   delete 'signout', to: 'sessions#destroy'
 
   # Example resource route with more complex sub-resources:

@@ -18,6 +18,7 @@
         <% if current_user.nil? %>
           <li><%= link_to 'Hallinta', signin_path %></li>
         <% else %>
+            <li><%= link_to 'Yhteydenotot', contacts_path %></li>
             <li><%= link_to 'Käyttäjät', users_path %></li>
             <li><%= link_to 'Kirjaudu ulos', signout_path, method: :delete %></li>
         <% end %>

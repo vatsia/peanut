@@ -1,0 +1,11 @@
+<h1>Ota yhteyttä</h1>
+
+<p>
+  Kysyttävää? Kommentoitavaa? Ota yhteyttä alla olevalla kentällä. Jos haluat vastauksen muistathan liittää mukaan esimerkiksi sähköpostiosoitteesi, niin otamme yhteyttä!
+</p>
+
+<%= render 'form', contact: @contact %>
+
+<% if not current_user.nil? %>
+<%= link_to 'Back', contacts_path %>
+<% end %>
